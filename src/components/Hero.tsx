@@ -1,36 +1,203 @@
+import React, { useState } from 'react';
+import { ArrowRight, Play, Star, Heart, ShoppingBag, Eye } from 'lucide-react';
 
 const Hero = () => {
+  const [activeProduct, setActiveProduct] = useState(0);
+
+  const featuredProducts = [
+    {
+      id: 1,
+      name: "Classic Collection",
+      image: "/videos/Screenshot_20250721_193952.jpg",
+      price: "$299",
+      rating: 4.9
+    },
+    {
+      id: 2,
+      name: "Luxe Collection",
+      image: "/videos/Screenshot_20250721_194008.jpg",
+      price: "$399",
+      rating: 4.8
+    },
+    {
+      id: 3,
+      name: "Signature Collection",
+      image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      price: "$499",
+      rating: 5.0
+    }
+  ];
+
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-800">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-20"></div>
+    <section id="home" className="relative min-h-screen bg-white overflow-hidden">
+      {/* Background Video */}
+      <div className="absolute inset-0 w-full h-full">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+          style={{ objectPosition: 'center' }}
+        >
+          <source src="/videos/VID_20250721_101715_999.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* Video Overlay for Text Readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
+      </div>
       
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="animate-fade-in">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Premium Hair Bundles
-            <span className="text-amber-400 block">Curated with Love</span>
-          </h1>
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-10 w-4 h-4 bg-white/20 rounded-full animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-6 h-6 bg-white/10 rounded-full animate-pulse delay-1000"></div>
+        <div className="absolute bottom-40 left-20 w-3 h-3 bg-white/20 rounded-full animate-pulse delay-2000"></div>
+        <div className="absolute bottom-20 right-10 w-5 h-5 bg-white/10 rounded-full animate-pulse delay-1500"></div>
+        <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-white/20 rounded-full animate-pulse delay-500"></div>
+        <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-white/15 rounded-full animate-pulse delay-3000"></div>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
           
-          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Discover our handpicked collection of premium hair bundles. Each bundle is carefully selected 
-            to bring out your natural beauty with unmatched quality and style.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-amber-500 text-black px-8 py-3 rounded-full hover:bg-amber-400 transition-all duration-300 transform hover:scale-105 font-medium text-lg">
-              Shop Hair Bundles
-            </button>
-            <button className="border-2 border-amber-500 text-amber-400 px-8 py-3 rounded-full hover:bg-amber-500 hover:text-black transition-all duration-300 font-medium text-lg">
-              View Collection
-            </button>
+          {/* Left Side - Content */}
+          <div className="space-y-8 animate-fade-in">
+            {/* Badge */}
+            <div className="inline-flex items-center space-x-2 bg-white text-black px-6 py-3 rounded-full">
+              <Star size={16} className="text-black fill-current" />
+              <span className="text-sm font-light tracking-wide">Premium Hair Collections</span>
+            </div>
+            
+            {/* Main Heading */}
+            <div className="space-y-4">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-white leading-tight tracking-wide">
+                Premium
+                <span className="block font-medium">Hair Collections</span>
+              </h1>
+              <p className="text-lg md:text-xl text-white/90 leading-relaxed font-light max-w-lg">
+                Discover our curated selection of premium hair bundles. Each collection is thoughtfully designed 
+                to enhance your natural beauty with unparalleled quality and timeless elegance.
+              </p>
+            </div>
+            
+            {/* Stats */}
+            <div className="flex items-center space-x-8 py-6">
+              <div className="text-center">
+                <div className="text-3xl font-medium text-white">500+</div>
+                <div className="text-sm text-white/70 font-light">Happy Clients</div>
+              </div>
+              <div className="w-px h-12 bg-white/30"></div>
+              <div className="text-center">
+                <div className="text-3xl font-medium text-white">50+</div>
+                <div className="text-sm text-white/70 font-light">Collections</div>
+              </div>
+              <div className="w-px h-12 bg-white/30"></div>
+              <div className="text-center">
+                <div className="text-3xl font-medium text-white">4.9</div>
+                <div className="text-sm text-white/70 font-light">Star Rating</div>
+              </div>
+            </div>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button className="group bg-white text-black px-8 py-4 hover:bg-white/90 transition-all duration-300 font-light text-sm tracking-wide uppercase flex items-center justify-center space-x-2 hover:scale-105">
+                <ShoppingBag size={18} />
+                <span>Shop Collections</span>
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button className="border border-white text-white px-8 py-4 hover:bg-white hover:text-black transition-all duration-300 font-light text-sm tracking-wide uppercase flex items-center justify-center space-x-2 hover:scale-105">
+                <Play size={18} />
+                <span>Watch Video</span>
+              </button>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="flex items-center space-x-6 pt-4">
+              <div className="flex items-center space-x-2">
+                <div className="flex space-x-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={14} className="text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <span className="text-sm text-white/80 font-light">4.9/5</span>
+              </div>
+              <div className="w-px h-4 bg-white/30"></div>
+              <span className="text-sm text-white/80 font-light">Free Shipping</span>
+              <div className="w-px h-4 bg-white/30"></div>
+              <span className="text-sm text-white/80 font-light">30-Day Returns</span>
+            </div>
+          </div>
+
+          {/* Right Side - Product Showcase */}
+          <div className="relative">
+            <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-white/20">
+              {/* Main Product Image */}
+              <div className="relative mb-6">
+                <img 
+                  src={featuredProducts[activeProduct].image} 
+                  alt={featuredProducts[activeProduct].name}
+                  className="w-full h-80 object-cover rounded-xl"
+                />
+                <div className="absolute top-4 right-4">
+                  <button className="bg-white/90 backdrop-blur-sm p-2 rounded-full hover:bg-white transition-colors">
+                    <Heart size={18} className="text-black" />
+                  </button>
+                </div>
+                <div className="absolute bottom-4 left-4">
+                  <div className="bg-black/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-light">
+                    {featuredProducts[activeProduct].price}
+                  </div>
+                </div>
+              </div>
+
+              {/* Product Info */}
+              <div className="space-y-3">
+                <h3 className="text-xl font-medium text-black">{featuredProducts[activeProduct].name}</h3>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <div className="flex space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} size={14} className={i < Math.floor(featuredProducts[activeProduct].rating) ? "text-yellow-400 fill-current" : "text-gray-300"} />
+                      ))}
+                    </div>
+                    <span className="text-sm text-black/60">({featuredProducts[activeProduct].rating})</span>
+                  </div>
+                  <button className="text-black/60 hover:text-black transition-colors">
+                    <Eye size={18} />
+                  </button>
+                </div>
+              </div>
+
+              {/* Product Navigation */}
+              <div className="flex justify-center space-x-2 mt-6">
+                {featuredProducts.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setActiveProduct(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      index === activeProduct ? 'bg-black' : 'bg-black/20'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Floating Elements */}
+            <div className="absolute -top-4 -left-4 bg-white text-black p-3 rounded-full shadow-lg">
+              <Star size={16} className="fill-current" />
+            </div>
+            <div className="absolute -bottom-4 -right-4 bg-black text-white p-3 rounded-full shadow-lg">
+              <ShoppingBag size={16} />
+            </div>
           </div>
         </div>
       </div>
       
-      {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-amber-500 rounded-full opacity-20 animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-32 h-32 bg-amber-400 rounded-full opacity-10 animate-pulse delay-1000"></div>
-      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-amber-600 rounded-full opacity-15 animate-pulse delay-500"></div>
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <div className="w-px h-16 bg-white/50 animate-pulse"></div>
+        <div className="text-xs text-white/70 mt-2 font-light tracking-wide">Scroll to explore</div>
+      </div>
     </section>
   );
 };

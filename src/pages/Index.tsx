@@ -1,8 +1,12 @@
 
+import React from 'react';
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import FeaturedBundles from "@/components/FeaturedBundles";
+import Features from "@/components/Features";
+import VideoSection from "@/components/VideoSection";
 import About from "@/components/About";
+import Testimonials from "@/components/Testimonials";
 import InstagramFeed from "@/components/InstagramFeed";
 import Footer from "@/components/Footer";
 
@@ -12,7 +16,10 @@ const Index = () => {
       <Header />
       <Hero />
       <FeaturedBundles />
+      <Features />
+      <VideoSection />
       <About />
+      <Testimonials />
       <InstagramFeed />
       <Footer />
     </div>

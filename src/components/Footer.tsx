@@ -1,78 +1,79 @@
 
+import React from 'react';
 import { Instagram, Mail, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-16">
+    <footer className="bg-black text-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
-          <div className="space-y-4">
-            <h3 className="text-2xl font-bold">
-              Bundled by <span className="text-rose-400">Sphere</span>
+          <div className="space-y-6">
+            <h3 className="text-2xl font-light tracking-wide">
+              Bundled by <span className="font-medium">Sphere</span>
             </h3>
-            <p className="text-gray-400 leading-relaxed">
-              Thoughtfully curated bundles for modern living. Discover products that elevate your everyday moments.
+            <p className="text-white/70 leading-relaxed font-light">
+              Curated hair collections for the modern woman. Discover pieces that enhance your natural beauty and elevate your style.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-6">
               <a 
-                href="https://www.instagram.com/bundledbysphere" 
+                href="https://www.instagram.com/bundledbysphere?igsh=aWZ3cHdzeDY4Zzhv" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-rose-400 transition-colors"
+                className="text-white/70 hover:text-white transition-colors"
               >
-                <Instagram size={20} />
+                <Instagram size={18} />
               </a>
               <a 
                 href="mailto:hello@bundledbysphere.com"
-                className="text-gray-400 hover:text-rose-400 transition-colors"
+                className="text-white/70 hover:text-white transition-colors"
               >
-                <Mail size={20} />
+                <Mail size={18} />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><a href="#home" className="text-gray-400 hover:text-white transition-colors">Home</a></li>
-              <li><a href="#bundles" className="text-gray-400 hover:text-white transition-colors">Bundles</a></li>
-              <li><a href="#about" className="text-gray-400 hover:text-white transition-colors">About</a></li>
-              <li><a href="#contact" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+          <div className="space-y-6">
+            <h4 className="text-sm font-light tracking-wide uppercase text-white/90">Quick Links</h4>
+            <ul className="space-y-3">
+              <li><a href="#home" className="text-white/70 hover:text-white transition-colors font-light text-sm">Home</a></li>
+              <li><a href="#collections" className="text-white/70 hover:text-white transition-colors font-light text-sm">Collections</a></li>
+              <li><a href="#about" className="text-white/70 hover:text-white transition-colors font-light text-sm">About</a></li>
+              <li><a href="#contact" className="text-white/70 hover:text-white transition-colors font-light text-sm">Contact</a></li>
             </ul>
           </div>
 
           {/* Categories */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Categories</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Morning Rituals</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Workspace</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Self-Care</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Home Essentials</a></li>
+          <div className="space-y-6">
+            <h4 className="text-sm font-light tracking-wide uppercase text-white/90">Collections</h4>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-white/70 hover:text-white transition-colors font-light text-sm">Classic Collection</a></li>
+              <li><a href="#" className="text-white/70 hover:text-white transition-colors font-light text-sm">Luxe Collection</a></li>
+              <li><a href="#" className="text-white/70 hover:text-white transition-colors font-light text-sm">Signature Collection</a></li>
+              <li><a href="#" className="text-white/70 hover:text-white transition-colors font-light text-sm">Limited Edition</a></li>
             </ul>
           </div>
 
           {/* Contact */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Get in Touch</h4>
-            <div className="space-y-3">
+          <div className="space-y-6">
+            <h4 className="text-sm font-light tracking-wide uppercase text-white/90">Get in Touch</h4>
+            <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <Mail size={16} className="text-rose-400" />
-                <span className="text-gray-400">hello@bundledbysphere.com</span>
+                <Mail size={16} className="text-white/70" />
+                <span className="text-white/70 font-light text-sm">hello@bundledbysphere.com</span>
               </div>
               <div className="flex items-center space-x-3">
-                <MapPin size={16} className="text-rose-400" />
-                <span className="text-gray-400">Curated with love, worldwide</span>
+                <MapPin size={16} className="text-white/70" />
+                <span className="text-white/70 font-light text-sm">Curated with precision, worldwide</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-          <p className="text-gray-400">
-            © 2024 Bundled by Sphere. All rights reserved. | Curating moments that matter.
+        <div className="border-t border-white/10 mt-16 pt-8 text-center">
+          <p className="text-white/60 font-light text-sm">
+            © 2024 Bundled by Sphere. All rights reserved. | Crafting beauty with precision.
           </p>
         </div>
       </div>
