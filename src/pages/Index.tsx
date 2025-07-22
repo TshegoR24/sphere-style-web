@@ -8,6 +8,7 @@ import VideoSection from "@/components/VideoSection";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
 import InstagramFeed from "@/components/InstagramFeed";
+import EmailSignup from "@/components/EmailSignup";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -21,6 +22,7 @@ const Index = () => {
       <About />
       <Testimonials />
       <InstagramFeed />
+      <EmailSignup />
       <Footer />
     </div>
   );
