@@ -10,7 +10,7 @@ const Testimonials = () => {
       id: 1,
       name: "Sarah Johnson",
       role: "Hair Stylist",
-      content: "The quality of Bundled by Sphere's hair collections is unmatched. My clients always ask where I get my hair from.",
+      content: "The quality of BundledBySphere's hair collections is unmatched. My clients always ask where I get my hair from.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
       video: null
@@ -19,7 +19,7 @@ const Testimonials = () => {
       id: 2,
       name: "Maria Rodriguez",
       role: "Fashion Blogger",
-      content: "I've tried many hair brands, but Bundled by Sphere consistently delivers the best quality and most natural look.",
+      content: "I've tried many hair brands, but BundledBySphere consistently delivers the best quality and most natural look.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
       video: "/videos/VID_20250721_104619_479.mp4"
@@ -48,28 +48,36 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-24 bg-black/5">
+    <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-white px-4 py-2 rounded-full mb-6 shadow-sm">
-            <Quote size={16} className="text-black" />
-            <span className="text-sm font-light text-black">Client Testimonials</span>
+        <div 
+          data-aos="fade-up"
+          className="text-center mb-12 sm:mb-16"
+        >
+          <div className="inline-flex items-center space-x-2 bg-black text-white px-3 sm:px-4 py-2 rounded-full mb-4 sm:mb-6 shadow-sm">
+            <Quote size={14} className="sm:w-4 sm:h-4" />
+            <span className="text-xs sm:text-sm font-light">Client Testimonials</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-light text-black mb-6 tracking-wide">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-playfair text-black mb-4 sm:mb-6 tracking-wide">
             What Our Clients
             <span className="block font-medium">Say</span>
           </h2>
-          <p className="text-lg text-black/60 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
             Don't just take our word for it. Here's what our satisfied clients have to say about their experience.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={testimonial.id} className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div 
+              key={testimonial.id} 
+              data-aos="fade-up"
+              data-aos-delay={index * 200}
+              className="bg-white p-6 sm:p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
+            >
               {/* Video Testimonial */}
               {testimonial.video && (
-                <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-6">
+                <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-4 sm:mb-6">
                   <video
                     ref={(el) => {
                       if (el) {
@@ -124,31 +132,35 @@ const Testimonials = () => {
                 </div>
               )}
 
-              <div className="flex items-center space-x-1 mb-4">
+              <div className="flex items-center space-x-1 mb-3 sm:mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} size={16} className="text-black fill-current" />
+                  <Star key={i} size={14} className="text-yellow-400 fill-current sm:w-4 sm:h-4" />
                 ))}
               </div>
-              <p className="text-black/60 mb-6 font-light leading-relaxed">
+              <p className="text-gray-600 mb-4 sm:mb-6 font-light leading-relaxed text-sm sm:text-base">
                 "{testimonial.content}"
               </p>
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-3 sm:space-x-4">
                 <img 
                   src={testimonial.image} 
                   alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover"
                 />
                 <div>
-                  <div className="font-medium text-black">{testimonial.name}</div>
-                  <div className="text-sm text-black/50 font-light">{testimonial.role}</div>
+                  <div className="font-medium text-black text-sm sm:text-base">{testimonial.name}</div>
+                  <div className="text-xs sm:text-sm text-gray-500 font-light">{testimonial.role}</div>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <button className="border border-black text-black px-8 py-3 hover:bg-black hover:text-white transition-all duration-300 font-light text-sm tracking-wide uppercase">
+        <div 
+          data-aos="fade-up"
+          data-aos-delay="600"
+          className="text-center mt-8 sm:mt-12"
+        >
+          <button className="border border-black text-black px-6 sm:px-8 py-3 hover:bg-black hover:text-white transition-all duration-300 font-light text-xs sm:text-sm tracking-wide uppercase">
             Read More Reviews
           </button>
         </div>

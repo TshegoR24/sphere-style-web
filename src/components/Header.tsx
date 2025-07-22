@@ -1,19 +1,34 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, ShoppingBag, Instagram, Search, Heart, User } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [cartCount] = useState(3); // Mock cart count
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="bg-black text-white sticky top-0 z-50 border-b border-white/10">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-black text-white border-b border-white/10' 
+        : 'bg-transparent text-white'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-light tracking-wide">
-              Bundled by <span className="font-medium">Sphere</span>
+            <h1 className="text-xl font-playfair tracking-wide">
+              BundledBy<span className="font-medium">Sphere</span>
             </h1>
           </div>
 
@@ -75,7 +90,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-6 border-t border-white/10">
+          <div className="md:hidden py-6 border-t border-white/10 bg-black">
             <nav className="flex flex-col space-y-4">
               <a href="#home" className="text-white/80 hover:text-white transition-colors font-light text-sm tracking-wide uppercase">
                 Home

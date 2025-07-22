@@ -60,7 +60,7 @@ const FeaturedBundles = () => {
   return (
     <section id="collections" className="py-16 sm:py-20 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+        <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center space-x-2 bg-black text-white px-3 sm:px-4 py-2 rounded-full mb-4 sm:mb-6">
             <ShoppingBag size={14} className="sm:w-4 sm:h-4" />
             <span className="text-xs sm:text-sm font-light">Featured Collections</span>
@@ -74,8 +74,11 @@ const FeaturedBundles = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {collections.map((collection) => (
-            <div key={collection.id} className="group bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+          {collections.map((collection, index) => (
+            <div 
+              key={collection.id} 
+              className="group bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+            >
               {/* Product Image */}
               <div className="relative overflow-hidden bg-gray-50 aspect-[3/4]">
                 <img 
@@ -127,7 +130,7 @@ const FeaturedBundles = () => {
                   </div>
                 </div>
               </div>
-              
+
               {/* Product Info */}
               <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
                 <div className="flex items-start justify-between">
@@ -139,7 +142,7 @@ const FeaturedBundles = () => {
                     <span className="text-xs sm:text-sm font-medium text-black">{collection.rating}</span>
                   </div>
                 </div>
-                
+
                 <p className="text-gray-600 text-xs sm:text-sm leading-relaxed font-light">
                   {collection.description}
                 </p>
@@ -184,7 +187,9 @@ const FeaturedBundles = () => {
         </div>
 
         {/* Store Features */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mt-12 sm:mt-16 pt-8 sm:pt-12 border-t border-gray-100">
+        <div 
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mt-12 sm:mt-16 pt-8 sm:pt-12 border-t border-gray-100"
+        >
           <div className="text-center">
             <div className="bg-black/5 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
               <Truck size={20} className="text-black sm:w-6 sm:h-6" />
@@ -215,7 +220,9 @@ const FeaturedBundles = () => {
           </div>
         </div>
 
-        <div className="text-center mt-8 sm:mt-12">
+        <div 
+          className="text-center mt-8 sm:mt-12"
+        >
           <button className="group border border-black text-black px-8 sm:px-12 py-3 sm:py-4 hover:bg-black hover:text-white transition-all duration-300 font-light text-xs sm:text-sm tracking-wide uppercase flex items-center space-x-2 mx-auto">
             <span>View All Collections</span>
             <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform sm:w-4 sm:h-4" />
